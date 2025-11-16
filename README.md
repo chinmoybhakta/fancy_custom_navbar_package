@@ -96,8 +96,8 @@ your_package/
 │        └── bottom_navigation.dart
 │        └── concave_clipper.dart
 │        └── nav_bar_item.dart
-├── images/
-├── images/
+├── icons/
+├── imgs/
 └── README.md
 ```
 
