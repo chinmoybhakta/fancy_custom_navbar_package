@@ -119,8 +119,6 @@ Below are example images showing how this package can be used:
 
 ![Example 3](assets/imgs/ss03.png)
 
-> Place your images in a folder named `images/` inside the root of your package.
-
 ---
 
 ## ⚠️ Limitations
@@ -134,21 +132,32 @@ Below are example images showing how this package can be used:
 
 You can customize:
 
-* `curveDepth` – how deep the curve is
-* `curveType` – concave or convex
-* `height` & `width`
-* `color` or `gradient`
+* `selectedColor`
+* `unselectedColor`
+* `innerContainerColor` & `outerContainerColor`
+* `NavBarItem`
 
 Example:
 
 ```dart
-ConcaveConvexContainer(
-  curveType: CurveType.concave,
-  curveDepth: 30,
-  gradient: LinearGradient(
-    colors: [Colors.blue, Colors.purple],
-  ),
-)
+BottomNavigation(
+          currentIndex: selectedScreen,
+          onTap: (newIndex) {
+            setState(() {
+              selectedScreen = newIndex;
+            });
+          },
+          items: const [
+            NavBarItem(label: "Home", icon: Icons.home),
+            NavBarItem(label: "Love", icon: Icons.favorite),
+            NavBarItem(label: "Profile", icon: Icons.person),
+            NavBarItem(label: "Setting", icon: Icons.settings),
+          ],
+          selectedColor: Colors.red,
+          unselectedColor: Colors.yellow,
+          innerContainerColor: Colors.cyanAccent,
+          outerContainerColor: Colors.cyan,
+        ),
 ```
 
 ---
@@ -159,10 +168,13 @@ ConcaveConvexContainer(
 your_package/
 │
 ├── lib/
-│   └── concave_convex_container.dart
+│   └── fancy_custom_navbar.dart
+│   └── src/
+│        └── bottom_navigation.dart
+│        └── concave_clipper.dart
+│        └── nav_bar_item.dart
 ├── images/
-│   ├── concave_example.png
-│   └── convex_example.png
+├── images/
 └── README.md
 ```
 
