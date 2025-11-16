@@ -1,6 +1,7 @@
-# Your Flutter Package Name
+# Fancy Custom NavBar
 
-A short and attractive description of what your package does.
+A beautiful, animated, and customizable bottom navigation bar with SVG support and concave dividers.
+
 
 ---
 
@@ -19,7 +20,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  your_package_name: ^1.0.0
+  fancy_custom_navbar: ^0.0.1
 ```
 
 Run:
@@ -28,36 +29,18 @@ Run:
 flutter pub get
 ```
 
----
-
-
-```dart
-ConcaveConvexContainer(
-  height: 120,
-  width: double.infinity,
-  curveDepth: 20,
-  child: Center(child: Text("Hello Shape!")),
-)
-```
-
----
-
 ## 🖼️ Use Case Preview
 
 Below are example images showing how this package can be used:
 
-### Example 1 – 
+### Example 1
+<img src="assets/imgs/ss01.png" width="300"/>
 
-![Example 1](assets/imgs/ss01.png)
+### Example 2
+<img src="assets/imgs/ss02.png" width="300"/>
 
-### Example 2 – 
-
-![Example 2](assets/imgs/ss02.png)
-
-
-### Example 3 –
-
-![Example 3](assets/imgs/ss03.png)
+### Example 3
+<img src="assets/imgs/ss03.png" width="300"/>
 
 ---
 
