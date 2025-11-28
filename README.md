@@ -22,7 +22,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  fancy_custom_navbar: ^0.0.3
+  fancy_custom_navbar: ^0.0.3v
 ```
 
 Run:
