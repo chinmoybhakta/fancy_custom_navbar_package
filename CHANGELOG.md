@@ -1,7 +1,7 @@
 # Changelog
 
-## 0.0.2 – 2025-11-16
-**Second release / bug fixes / new features**
+## 0.0.3 – 2025-11-29
+**Third release / bug fixes / new features**
 
 ### Features
 - Customizable **bottom navigation bar** for Flutter apps.
@@ -17,7 +17,8 @@
 
 ## ⚠️ Limitations
 
-* **Maximum 4 items** are supported across all devices.
+* **Maximum 5 items** are supported across all devices.
 * **Long labels are not allowed** (short labels recommended for best UI).
+* **Not applicable for tablets or large screens.
 
 ---

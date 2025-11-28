@@ -33,26 +33,32 @@ class _BottomNavigationState extends State<BottomNavigation> {
   }
 
   Widget _buildNavItem(
-    int index,
-    NavBarItem item,
-    Color? selectedColor,
-    Color? unselectedColor,
-    Color? innerContainerColor,
-    Color? outerContainerColor,
-  ) {
+      int index,
+      NavBarItem item,
+      Color? selectedColor,
+      Color? unselectedColor,
+      Color? innerContainerColor,
+      Color? outerContainerColor,
+      ) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final isSelected = widget.currentIndex == index;
+
     return InkWell(
       onTap: () => onItemTapped(index),
-      child: Container(
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.ease,
         padding: EdgeInsets.all(screenWidth * 0.01),
         decoration: BoxDecoration(
           color: outerContainerColor ?? Colors.purple,
           borderRadius: BorderRadius.circular(24),
         ),
-        child: Container(
-          padding: EdgeInsets.all(screenWidth * 0.05),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+          padding: EdgeInsets.all(screenWidth * 0.025),
           decoration: BoxDecoration(
-            color: (widget.currentIndex == index)
+            color: isSelected
                 ? (innerContainerColor ?? Colors.purpleAccent)
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(24),
@@ -61,13 +67,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // ICON
               if (item.svgPath != null) ...[
                 SizedBox(
-                  width: (screenWidth * 0.2) / widget.items.length,
+                  width: (screenWidth * 0.1) / widget.items.length,
                   child: SvgPicture.asset(
                     item.svgPath!,
                     colorFilter: ColorFilter.mode(
-                      (widget.currentIndex == index)
+                      isSelected
                           ? (selectedColor ?? Colors.yellow)
                           : (unselectedColor ?? Colors.yellow),
                       BlendMode.srcIn,
@@ -79,23 +86,37 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   width: (screenWidth * 0.2) / widget.items.length,
                   child: Icon(
                     item.icon ?? Icons.navigation_outlined,
-                    color: (widget.currentIndex == index)
+                    color: isSelected
                         ? (selectedColor ?? Colors.yellow)
                         : (unselectedColor ?? Colors.yellow),
                   ),
                 ),
               ],
-              if (widget.currentIndex == index) ...[
-                SizedBox(width: screenWidth * 0.01),
-                Text(
-                  item.label,
-                  style: TextStyle(
-                    color: (index == widget.currentIndex)
-                        ? (selectedColor ?? Colors.yellow)
-                        : (unselectedColor ?? Colors.yellow),
-                  ),
+
+              // LABEL (animated)
+              AnimatedSize(
+                duration: const Duration(milliseconds: 250),
+                curve: Curves.easeOut,
+                child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 200),
+                  opacity: isSelected ? 1.0 : 0.0,
+                  child: isSelected
+                      ? Row(
+                    children: [
+                      SizedBox(width: screenWidth * 0.015),
+                      Text(
+                        item.label,
+                        style: TextStyle(
+                          color: isSelected
+                              ? (selectedColor ?? Colors.yellow)
+                              : (unselectedColor ?? Colors.yellow),
+                        ),
+                      ),
+                    ],
+                  )
+                      : const SizedBox.shrink(),
                 ),
-              ],
+              )
             ],
           ),
         ),
@@ -126,11 +147,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
               ),
               if (index != widget.items.length - 1) ...[
                 SizedBox(
-                  width: (screenWidth * 0.1 / widget.items.length),
+                  width: (screenWidth * 0.15 / widget.items.length),
                   child: ClipPath(
                     clipper: ConcaveClipper(),
                     child: Container(
-                      height: 24, // thickness of the line
+                      height: 18, // thickness of the line
                       color: widget.outerContainerColor ?? Colors.purple,
                     ),
                   ),

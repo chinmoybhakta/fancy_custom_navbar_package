@@ -23,7 +23,7 @@ class _DemoAppState extends State<DemoApp> {
       Screen1(),
       Screen2(),
       Screen3(),
-      Screen4(),
+      Screen4()
     ];
     return MaterialApp(
       home: Scaffold(
@@ -40,7 +40,7 @@ class _DemoAppState extends State<DemoApp> {
             NavBarItem(label: "Home", icon: Icons.home),
             NavBarItem(label: "Love", icon: Icons.favorite),
             NavBarItem(label: "Profile", icon: Icons.person),
-            NavBarItem(label: "setting", icon: Icons.settings),
+            NavBarItem(label: "setting", icon: Icons.settings)
           ],
           selectedColor: Colors.yellow,
           unselectedColor: Colors.yellow,

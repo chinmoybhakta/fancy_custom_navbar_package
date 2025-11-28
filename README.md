@@ -11,6 +11,7 @@ A beautiful, animated, and customizable bottom navigation bar with SVG support a
 * Customizable concave/convex shapes
 * Lightweight and fast
 * Supports Flutter Web, iOS, Android
+* Interactive animation
 
 ---
 
@@ -46,8 +47,9 @@ Below are example images showing how this package can be used:
 
 ## ⚠️ Limitations
 
-* **Maximum 4 items** are supported across all devices.
+* **Maximum 5 items** are supported across all devices.
 * **Long labels are not allowed** (short labels recommended for best UI).
+* **Not applicable for tablets or large screens.
 
 ---
 
