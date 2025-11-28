@@ -13,12 +13,23 @@
 - **Flexible labels**: only shows text for the selected tab.
 - Lightweight and easy to integrate into any Flutter project.
 
+### Fixes
+- Improved animation transitions.
+- Code cleanup and minor logic enhancements.
+
+### Limitations
+- **Maximum 5 items supported**.
+- **Short labels recommended** for best UI.
+- **Not optimized for tablets / large screens**.
+
 ---
 
-## ⚠️ Limitations
-
-* **Maximum 5 items** are supported across all devices.
-* **Long labels are not allowed** (short labels recommended for best UI).
-* **Not applicable for tablets or large screens.
+## 0.0.2 – 2025-11-16
+- Added support for up to **4 items**.
+- Minor improvements to layout structure.
 
 ---
+
+## 0.0.1
+- Initial release.
+

@@ -2,16 +2,17 @@
 
 A beautiful, animated, and customizable bottom navigation bar with SVG support and concave dividers.
 
-
 ---
 
 ## ✨ Features
 
-* Easy to use widgets
-* Customizable concave/convex shapes
-* Lightweight and fast
-* Supports Flutter Web, iOS, Android
-* Interactive animation
+- Easy-to-use widgets
+- Customizable concave/convex shapes
+- Lightweight and fast
+- Interactive animations
+- Supports Flutter Web, iOS, and Android
+- SVG and IconData support
+- Responsive design
 
 ---
 
@@ -21,7 +22,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  fancy_custom_navbar: ^0.0.1
+  fancy_custom_navbar: ^0.0.3
 ```
 
 Run:
@@ -82,7 +83,7 @@ BottomNavigation(
           unselectedColor: Colors.yellow,
           innerContainerColor: Colors.cyanAccent,
           outerContainerColor: Colors.cyan,
-        ),
+        )
 ```
 
 ---
@@ -90,16 +91,17 @@ BottomNavigation(
 ## 📂 Folder Structure
 
 ```
-your_package/
+fancy_custom_navbar/
 │
 ├── lib/
-│   └── fancy_custom_navbar.dart
+│   ├── fancy_custom_navbar.dart
 │   └── src/
-│        └── bottom_navigation.dart
-│        └── concave_clipper.dart
-│        └── nav_bar_item.dart
-├── icons/
-├── imgs/
+│       ├── bottom_navigation.dart
+│       ├── concave_clipper.dart
+│       └── nav_bar_item.dart
+├── assets/
+│   ├── icons/
+│   └── imgs/
 └── README.md
 ```
 
