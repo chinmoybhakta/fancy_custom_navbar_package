@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.0.3 – 2025-11-29
+## 0.0.4 – 2025-11-29
 **Third release / bug fixes / new features**
 
 ### Features
@@ -21,6 +21,12 @@
 - **Maximum 5 items supported**.
 - **Short labels recommended** for best UI.
 - **Not optimized for tablets / large screens**.
+
+---
+
+## 0.0.3 – 2025-11-29
+- Added support for up to **5 items**.
+- Minor improvements to layout structure.
 
 ---
 
